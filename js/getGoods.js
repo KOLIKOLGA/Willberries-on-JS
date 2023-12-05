@@ -15,7 +15,7 @@ const getGoods = () => {
 
         localStorage.setItem("goods", JSON.stringify(array));
 
-        if (window.location.pathname !== "./goods.html") {
+        if (window.location.pathname !== "/Willberries-on-JS/goods.html") {
           window.location.href = "./goods.html";
         }
       });
