@@ -20,7 +20,7 @@ const getGoods = () => {
         }
       });
   };
-  console.log(window.location.href);
+  console.log(window.location);
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
