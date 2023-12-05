@@ -1,0 +1,14 @@
+ localStorage.removeItem("goods");
+  console.log(localStorage);для удаления содержимого локалстроидж
+
+const goods = localStorage.getItem("goods");
+
+localStorage.setItem("goods", JSON.stringify(data));для сохранения в локалсторидж данных полученых методом then
+
+     if (category) {
+          console.log("yes");
+        } else {
+          console.log("no");
+        }
+
+ category ? console.log("yes") : console.log("no");
