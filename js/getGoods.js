@@ -2,7 +2,10 @@ const getGoods = () => {
   const links = document.querySelectorAll(".navigation-link");
 
   const renderGoods = (goods) => {
-    console.log(goods);
+    const goodsContainer = document.querySelector(".long-goods-list");
+    goods.forEach((good) => {
+      console.log(good);
+    });
   };
 
   const getData = (value, category) => {
@@ -22,7 +25,7 @@ const getGoods = () => {
         }
       });
   };
-  console.log(window.location);
+
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
