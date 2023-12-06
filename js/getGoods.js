@@ -23,8 +23,8 @@ const getGoods = () => {
             </button>
           </div>
       `;
+      goodsContainer.append(goodBlock);
     });
-    goodsContainer.append(goodBlock);
   };
 
   const getData = (value, category) => {
