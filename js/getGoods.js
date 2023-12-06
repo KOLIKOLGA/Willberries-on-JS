@@ -3,8 +3,26 @@ const getGoods = () => {
 
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector(".long-goods-list");
+
+    goodsContainer.innerHTML = "";
+
     goods.forEach((good) => {
-      console.log(good);
+      const goodBlock = document.createElement("div");
+
+      goodBlock.classList.add("col-lg-3");
+      goodBlock.classList.add("col-sm-6");
+
+      goodBlock.innerHTML = `
+          <div class="goods-card">
+            <span class="label">New</span>
+            <img src="img/image-119.jpg" alt="image: Hoodie" class="goods-image"/>
+            <h3 class="goods-title">Embroidered Hoodie</h3>
+            <p class="goods-description">Yellow/Lilac/Fuchsia/Orange</p>
+            <button class="button goods-card-btn add-to-cart" data-id="007">
+            <span class="button-price">$89</span>
+            </button>
+          </div>
+      `;
     });
   };
 
