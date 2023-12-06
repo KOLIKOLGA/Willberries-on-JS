@@ -24,6 +24,7 @@ const getGoods = () => {
           </div>
       `;
     });
+    goodsContainer.append(goodBlock);
   };
 
   const getData = (value, category) => {
