@@ -17,6 +17,8 @@ const getGoods = () => {
 
         if (window.location.pathname !== "/Willberries-on-JS/goods.html") {
           window.location.href = "./goods.html";
+        } else {
+          renderGoods(array);
         }
       });
   };
@@ -30,6 +32,12 @@ const getGoods = () => {
       getData(linkValue, category);
     });
   });
+  if (
+    localStorage.getItem("goods") &&
+    window.location.pathname === "/Willberries-on-JS/goods.html"
+  ) {
+    renderGoods(JSON.parse(localStorage.getItem("goods")));
+  }
 };
 
 getGoods();
