@@ -50,14 +50,10 @@ const search = function () {
       });
   };
 
-  try {
-    searchBtn.addEventListener("click", () => {
-      getData(input.value);
-      console.log(input.value);
-    });
-  } catch (e) {
-    console.error("Уважаемый верстальщик, верните класс пожалуйста :-)");
-  }
+  searchBtn.addEventListener("click", () => {
+    getData(input.value);
+    console.log(input.value);
+  });
 };
 
 search();

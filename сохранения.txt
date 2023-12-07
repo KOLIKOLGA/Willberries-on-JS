@@ -12,3 +12,12 @@ localStorage.setItem("goods", JSON.stringify(data));для сохранения 
         }
 
  category ? console.log("yes") : console.log("no");
+
+ try {
+    searchBtn.addEventListener("click", () => {
+      getData(input.value);
+      console.log(input.value);
+    });
+  } catch (e) {
+    console.error("Уважаемый верстальщик, верните класс пожалуйста :-)");
+  }
