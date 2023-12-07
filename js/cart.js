@@ -4,6 +4,14 @@ const cart = function () {
   const closeBtn = cart.querySelector(".modal-close");
   const goodsContainer = document.querySelector(".long-goods-list");
 
+  const addToCart = (id) => {
+    const goods = JSON.parse(localStorage.getItem("goods"));
+    const goodClicked = goods.find((good) => good.id === id);
+    const cart = localStorage.getItem("cart")
+      ? localStorage.getItem("cart")
+      : [];
+  };
+
   cartBtn.addEventListener("click", function () {
     cart.style.display = "flex";
   });
@@ -13,11 +21,10 @@ const cart = function () {
 
   if (goodsContainer) {
     goodsContainer.addEventListener("click", (event) => {
-      console.log(event.target);
       if (event.target.closest(".add-to-cart")) {
         const buttonToCart = event.target.closest(".add-to-cart");
         const goodId = buttonToCart.dataset.id;
-        console.log(goodId);
+        addToCart(goodId);
       }
     });
   }
