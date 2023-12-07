@@ -16,7 +16,8 @@ const cart = function () {
       console.log(event.target);
       if (event.target.closest(".add-to-cart")) {
         const buttonToCart = event.target.closest(".add-to-cart");
-        console.log(buttonToCart);
+        const goodId = buttonToCart.dataset.id;
+        console.log(goodId);
       }
     });
   }
