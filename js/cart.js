@@ -4,8 +4,7 @@ const cart = function () {
   const closeBtn = cart.querySelector(".modal-close");
   const goodsContainer = document.querySelector(".long-goods-list");
 
-  const addToCart = (id) => {
-    const goodId = buttonToCart.dataset.id;
+  const addToCart = (goodId) => {
     const goods = JSON.parse(localStorage.getItem("goods"));
     const clickedGood = goods.find((good) => good.id === goodId);
     const cart = localStorage.getItem("cart")
