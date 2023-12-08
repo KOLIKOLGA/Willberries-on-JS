@@ -6,10 +6,20 @@ const cart = function () {
 
   const addToCart = (id) => {
     const goods = JSON.parse(localStorage.getItem("goods"));
-    const goodClicked = goods.find((good) => good.id === id);
+    const clickedGood = goods.find((good) => good.id === id);
     const cart = localStorage.getItem("cart")
       ? localStorage.getItem("cart")
       : [];
+
+    console.log(cart.some((good) => good.id === clickedGood.id));
+    if ((good) => good.id === clickedGood.id) {
+      console.log("Увеличить количество clickedGood");
+    } else {
+      console.log("Добавить товар в корзину");
+      clickedGood.count = 1;
+      cart.push(clickedGood);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
   };
 
   cartBtn.addEventListener("click", function () {
