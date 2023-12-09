@@ -8,7 +8,7 @@ const cart = function () {
     const goods = JSON.parse(localStorage.getItem("goods"));
     const clickedGood = goods.find((good) => good.id === id);
     const cart = localStorage.getItem("cart")
-      ? localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart")) 
       : [];
 
     console.log(cart.some((good) => good.id === clickedGood.id));
