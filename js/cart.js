@@ -14,6 +14,12 @@ const cart = function () {
     console.log(cart.some((good) => good.id === clickedGood.id));
     if ((good) => good.id === clickedGood.id) {
       console.log("Увеличить количество clickedGood");
+      cart.map(good=>{
+        if (good.id === clickedGood.id) {
+          good.count++
+        }
+        return good
+      }) ;
     } else {
       console.log("Добавить товар в корзину");
       clickedGood.count = 1;
