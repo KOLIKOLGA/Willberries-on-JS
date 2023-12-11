@@ -48,20 +48,14 @@ const getGoods = () => {
         // ) {
         //   window.location.href = "/goods.html"; //(window.location.pathname !== "/Willberries-on-JS/goods.html")
         // }
-        if (
-          window.location.pathname !== "/goods.html" ||
-          "/Willberries-on-JS/goods.html"
-        ) {
-          window.location.href =
-            "/goods.html" || "/Willberries-on-JS/goods.html";
+        if (window.location.pathname !== "/Willberries-on-JS/goods.html") {
+          window.location.href = "/goods.html";
           console.log("first line");
         } else if (window.location.pathname !== "./goods.html") {
           window.location.href = "./goods.html";
           console.log("second line");
-        } else if (
-          window.location.pathname !== "/Willberries-on-JS/goods.html"
-        ) {
-          window.location.href = "/Willberries-on-JS/goods.html";
+        } else if (window.location.pathname !== "/goods.html") {
+          window.location.href = "/goods.html";
           console.log("three line");
         } else if (
           window.location.pathname !== "/Willberries-on-JS/goods.html"
