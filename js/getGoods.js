@@ -60,7 +60,7 @@ const getGoods = () => {
         } else if (
           window.location.pathname !== "/Willberries-on-JS/goods.html"
         ) {
-          window.location.href = "/goods.html";
+          window.location.href = "/Willberries-on-JS/goods.html";
           console.log("four line");
         } else {
           renderGoods(array);
