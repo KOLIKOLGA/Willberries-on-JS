@@ -13,8 +13,9 @@ const cart = function () {
     console.log(clickedGood);
     console.log(cart);
 
-    console.log(cart.some((good) => good.id === clickedGood.id));
-    if ((good) => good.id === clickedGood.id) {
+    const someGood = cart.some((good) => good.id === clickedGood.id);
+    if (someGood) {
+      console.log("what");
       console.log("Увеличить количество clickedGood");
       cart.map((good) => {
         if (good.id === clickedGood.id) {

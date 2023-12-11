@@ -42,7 +42,10 @@ const getGoods = () => {
 
         localStorage.setItem("goods", JSON.stringify(array));
 
-        if (window.location.pathname !== "/goods.html") {
+        if (
+          window.location.pathname !== "/goods.html" ||
+          "/Willberries-on-JS/goods.html"
+        ) {
           window.location.href = "/goods.html"; //(window.location.pathname !== "/Willberries-on-JS/goods.html")
         } else {
           renderGoods(array);
@@ -60,8 +63,9 @@ const getGoods = () => {
     });
   });
   if (
-    localStorage.getItem("goods") &&
-    window.location.pathname === "/goods.html"
+    (localStorage.getItem("goods") &&
+      window.location.pathname === "/goods.html") ||
+    "/Willberries-on-JS/goods.html"
   ) {
     renderGoods(JSON.parse(localStorage.getItem("goods"))); //window.location.pathname === "/Willberries-on-JS/goods.html"
   }
