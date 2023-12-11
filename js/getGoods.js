@@ -52,7 +52,8 @@ const getGoods = () => {
           window.location.pathname !== "/goods.html" ||
           "/Willberries-on-JS/goods.html"
         ) {
-          window.location.href = "/goods.html";
+          window.location.href =
+            "/goods.html" || "/Willberries-on-JS/goods.html";
           console.log("first line");
         } else if (window.location.pathname !== "./goods.html") {
           window.location.href = "./goods.html";
