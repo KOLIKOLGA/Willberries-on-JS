@@ -21,3 +21,19 @@ localStorage.setItem("goods", JSON.stringify(data));для сохранения 
   } catch (e) {
     console.error("Уважаемый верстальщик, верните класс пожалуйста :-)");
   }
+
+
+if (localStorage.getItem("goods") && window.location.pathname ==="/goods.html") {
+renderGoods(JSON.parse(localStorage.getItem("goods")));
+} else if (localStorage.getItem("goods") && window.location.pathname ==="./goods.html"){
+renderGoods(JSON.parse(localStorage.getItem("goods")));
+} else if (localStorage.getItem("goods") && window.location.pathname ==="/Willberries-on-JS/goods.html"){
+renderGoods(JSON.parse(localStorage.getItem("goods")));
+}
+
+
+if (window.location.pathname !== "/goods.html") { window.location.href = "/goods.html"}
+else if (window.location.pathname !== "./goods.html") {
+window.location.href = "./goods.html" }
+else if (window.location.pathname !== "/Willberries-on-JS/goods.html") {
+window.location.href = "/Willberries-on-JS/goods.html"}
