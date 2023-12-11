@@ -13,15 +13,15 @@ const cart = function () {
     console.log(clickedGood);
     console.log(cart);
 
-    //console.log(cart.some(good => good.id === clickedGood.id));
-    if (cart.some((good) => good.id === clickedGood.id)) {
+    console.log(cart.some((good) => good.id === clickedGood.id));
+    if ((good) => good.id === clickedGood.id) {
       console.log("Увеличить количество clickedGood");
-      //cart.map(good=>{
-      // if (good.id === clickedGood.id) {
-      //  good.count++
-      //  }
-      //  return good
-      //  }) ;
+      cart.map((good) => {
+        if (good.id === clickedGood.id) {
+          good.count++;
+        }
+        return good;
+      });
     } else {
       console.log("Добавить товар в корзину");
       clickedGood.count = 1;
