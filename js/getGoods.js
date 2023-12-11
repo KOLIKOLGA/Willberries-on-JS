@@ -42,14 +42,14 @@ const getGoods = () => {
 
         localStorage.setItem("goods", JSON.stringify(array));
 
-        if (window.location.pathname !== "/Willberries-on-JS/goods.html") {
-          window.location.href = "./goods.html";
+        if (window.location.pathname !== "/goods.html") {
+          window.location.href = "/goods.html"; //(window.location.pathname !== "/Willberries-on-JS/goods.html")
         } else {
           renderGoods(array);
         }
       });
   };
-
+  console.log(window.location.pathname);
   links.forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
@@ -61,9 +61,9 @@ const getGoods = () => {
   });
   if (
     localStorage.getItem("goods") &&
-    window.location.pathname === "/Willberries-on-JS/goods.html"
+    window.location.pathname === "/goods.html"
   ) {
-    renderGoods(JSON.parse(localStorage.getItem("goods")));
+    renderGoods(JSON.parse(localStorage.getItem("goods"))); //window.location.pathname === "/Willberries-on-JS/goods.html"
   }
 
   if (more) {

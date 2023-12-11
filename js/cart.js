@@ -4,15 +4,17 @@ const cart = function () {
   const closeBtn = cart.querySelector(".modal-close");
   const goodsContainer = document.querySelector(".long-goods-list");
 
-  const addToCart = (goodId) => {
+  const addToCart = (id) => {
     const goods = JSON.parse(localStorage.getItem("goods"));
-    const clickedGood = goods.find((good) => good.id === goodId);
+    const clickedGood = goods.find((good) => good.id === id);
     const cart = localStorage.getItem("cart")
-      ? localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
       : [];
+    console.log(clickedGood);
+    console.log(cart);
 
-    console.log(cart.some((good) => good.id === clickedGood.id));
-    if ((good) => good.id === clickedGood.id) {
+    //console.log(cart.some(good => good.id === clickedGood.id));
+    if (cart.some((good) => good.id === clickedGood.id)) {
       console.log("Увеличить количество clickedGood");
     } else {
       console.log("Добавить товар в корзину");
@@ -34,6 +36,7 @@ const cart = function () {
       if (event.target.closest(".add-to-cart")) {
         const buttonToCart = event.target.closest(".add-to-cart");
         const goodId = buttonToCart.dataset.id;
+        console.log(goodId);
         addToCart(goodId);
       }
     });
