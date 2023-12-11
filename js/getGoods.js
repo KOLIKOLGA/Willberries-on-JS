@@ -50,12 +50,20 @@ const getGoods = () => {
         // }
         if (window.location.pathname !== "/goods.html") {
           window.location.href = "/goods.html";
+          console.log("first line");
         } else if (window.location.pathname !== "./goods.html") {
           window.location.href = "./goods.html";
+          console.log("second line");
         } else if (
           window.location.pathname !== "/Willberries-on-JS/goods.html"
         ) {
           window.location.href = "/Willberries-on-JS/goods.html";
+          console.log("three line");
+        } else if (
+          window.location.pathname !== "/Willberries-on-JS/goods.html"
+        ) {
+          window.location.href = "./goods.html";
+          console.log("four line");
         } else {
           renderGoods(array);
         }
