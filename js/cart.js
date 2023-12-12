@@ -3,6 +3,9 @@ const cart = function () {
   const cart = document.getElementById("modal-cart");
   const closeBtn = cart.querySelector(".modal-close");
   const goodsContainer = document.querySelector(".long-goods-list");
+  const cartTable = document.querySelector(".cart-table__goods");
+
+  console.log(cartTable);
 
   const addToCart = (id) => {
     const goods = JSON.parse(localStorage.getItem("goods"));
@@ -31,7 +34,32 @@ const cart = function () {
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
+  const renderCartGoods = (goods) => {
+    goods.forEach((good) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+      <td>${good.name}</td>
+      <td>${good.price}$</td>
+      <td><button class="cart-btn-minus">-</button></td>
+      <td>${good.count}</td>
+      <td><button class=" cart-btn-plus">+</button></td>
+      <td>${+good.price * +good.count}$</td>
+      <td><button class="cart-btn-delete">x</button></td>
+      `;
+      cartTable.append(tr);
+
+      tr.addEventListener("click", () => {
+        console.log(tr);
+      });
+    });
+  };
+
   cartBtn.addEventListener("click", function () {
+    console.log("рендер товара");
+    const cartArray = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+    renderCartGoods(cartArray);
     cart.style.display = "flex";
   });
   closeBtn.addEventListener("click", function () {
