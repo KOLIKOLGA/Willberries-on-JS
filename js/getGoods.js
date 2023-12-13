@@ -53,7 +53,9 @@ const getGoods = () => {
         if (window.location.pathname === "/index.html") {
           window.location.href = "/goods.html";
           console.log("first line");
-        } else if (window.location.pathname === "/Willberries-on-JS/") {
+        } else if (
+          window.location.pathname === "/Willberries-on-JS/index.html"
+        ) {
           window.location.href = "/Willberries-on-JS/goods.html";
           console.log("four line");
         } else {

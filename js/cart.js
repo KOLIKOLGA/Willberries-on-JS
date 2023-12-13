@@ -48,8 +48,15 @@ const cart = function () {
       `;
       cartTable.append(tr);
 
-      tr.addEventListener("click", () => {
-        console.log(tr);
+      tr.addEventListener("click", (e) => {
+        console.log(e.target);
+        if (e.target.classList.contains("cart-btn-plus")) {
+          console.log("+");
+        } else if (e.target.classList.contains("cart-btn-minus")) {
+          console.log("-");
+        } else if (e.target.classList.contains("cart-btn-delete")) {
+          console.log("delete");
+        }
       });
     });
   };
