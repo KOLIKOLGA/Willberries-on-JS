@@ -4,7 +4,10 @@ const cart = function () {
   const closeBtn = cart.querySelector(".modal-close");
   const goodsContainer = document.querySelector(".long-goods-list");
   const cartTable = document.querySelector(".cart-table__goods");
+  const modalForm = document.querySelector(".modal-form");
+  const cardTableTotal = document.querySelector(".card-table__total");
 
+  console.log(cardTableTotal);
   const deleteCartItem = (id) => {
     const cart = JSON.parse(localStorage.getItem("cart"));
 
@@ -97,8 +100,30 @@ const cart = function () {
     });
   };
 
+  const sendForm = () => {
+    const cartArray = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST",
+      body: JSON.stringify({
+        cart: cartArray,
+        name: "",
+        phone: "",
+      }),
+    }).then(() => {
+      cart.style.display = "";
+    });
+  };
+
+  modalForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sendForm();
+    localStorage.removeItem("cart");
+  });
+
   cartBtn.addEventListener("click", function () {
-    console.log("рендер товара");
     const cartArray = localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart"))
       : [];
@@ -118,6 +143,13 @@ const cart = function () {
       cart.style.display = "";
     }
   });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      cart.style.display = "";
+    }
+  });
+
   if (goodsContainer) {
     goodsContainer.addEventListener("click", (event) => {
       if (event.target.closest(".add-to-cart")) {
