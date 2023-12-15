@@ -42,21 +42,15 @@ const getGoods = () => {
 
         localStorage.setItem("goods", JSON.stringify(array));
 
-        // if (
-        //   window.location.pathname !== "/goods.html" ||
-        //   "/Willberries-on-JS/goods.html"
-        // ) {
-        //   window.location.href = "/goods.html"; //(window.location.pathname !== "/Willberries-on-JS/goods.html")
-        // }
-        const pathnameGoods = window.location.pathname !== "./goods.html";
-
         if (window.location.pathname === "/index.html") {
           window.location.href = "/goods.html";
           console.log("first line");
         } else if (window.location.pathname === "/Willberries-on-JS/") {
           window.location.href = "/Willberries-on-JS/goods.html";
           console.log("two line");
-        } else if (window.location.pathname === "/Willberries-on-JS/index.html") {
+        } else if (
+          window.location.pathname === "/Willberries-on-JS/index.html"
+        ) {
           window.location.href = "/Willberries-on-JS/goods.html";
           console.log("three line");
         } else {
@@ -74,13 +68,6 @@ const getGoods = () => {
       getData(linkValue, category);
     });
   });
-  // if (
-  //   (localStorage.getItem("goods") &&
-  //     window.location.pathname === "/goods.html") ||
-  //   "/Willberries-on-JS/goods.html"
-  // ) {
-  //   renderGoods(JSON.parse(localStorage.getItem("goods"))); //window.location.pathname === "/Willberries-on-JS/goods.html"
-  // }
 
   if (
     localStorage.getItem("goods") &&
@@ -104,6 +91,14 @@ const getGoods = () => {
       event.preventDefault();
       getData();
       console.log("click");
+    });
+    more.addEventListener("mouseover", () => {
+      more.style.color = "red";
+      more.style.backgroundColor = "blue";
+    });
+    more.addEventListener("mouseout", () => {
+      more.style.color = "#262D33";
+      more.style.backgroundColor = "";
     });
   }
 };
