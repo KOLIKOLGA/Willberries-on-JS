@@ -93,8 +93,8 @@ const getGoods = () => {
       console.log("click");
     });
     more.addEventListener("mouseover", () => {
-      more.style.color = "red";
-      more.style.backgroundColor = "blue";
+      more.style.color = "#ffffff";
+      more.style.backgroundColor = "#4592FF";
     });
     more.addEventListener("mouseout", () => {
       more.style.color = "#262D33";
